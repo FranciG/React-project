@@ -1,34 +1,29 @@
-import React from 'react';
+import React, { Component } from "react";
 import List from './components/List';
 
-import './App.css';
-
-function App() {
- 
-   state = {
+class App extends Component {
+  state = {
     list: [
       {
         id: 1,
-        place: 'El paellero',
+        place: "Doesn't matter",
         reserved: false
       },
       {
         id: 2,
-        place: 'El pueblo',
-        reserved: false
-      },
-      {
-        id: 3,
-        place: 'Casa enrique',
-        reserved: false
-      },
+        place: "Matter",
+        reserved: true
+      }
     ]
-  } 
-  return (
-    <div className="App">
-     <List  list={this.state.list} />
-    </div>
-  );
+  };
+
+  render() {
+    return (
+      <div className={"App"}>
+        <List list={this.state.list}></List>
+      </div>
+    );
+  }
 }
 
 export default App;
