@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import List from './components/List';
+
 import './App.css';
 
 function App() {
+ 
+   state = {
+    list: [
+      {
+        id: 1,
+        place: 'El paellero',
+        reserved: false
+      },
+      {
+        id: 2,
+        place: 'El pueblo',
+        reserved: false
+      },
+      {
+        id: 3,
+        place: 'Casa enrique',
+        reserved: false
+      },
+    ]
+  } 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <List  list={this.state.list} />
     </div>
   );
 }
