@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from "react";
 
 
+class List extends Component {
 
-function App() {
- return (
-   <div className="App">
-    <h1>app</h1>
-   </div>
- );
+
+  render() {
+   
+    return this.props.list.map((list) =>(
+      <h3>{list.place}</h3>
+    ));
+  }
 }
 
-export default App;
+export default List;

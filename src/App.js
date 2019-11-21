@@ -6,21 +6,24 @@ class App extends Component {
     list: [
       {
         id: 1,
-        place: "Doesn't matter",
+        place: "Pequeña italia",
         reserved: false
       },
       {
         id: 2,
-        place: "Matter",
+        place: "El paellista",
         reserved: true
       }
     ]
   };
 
   render() {
+    
     return (
       <div className={"App"}>
-        <List list={this.state.list}></List>
+     
+        <List list={this.state.list}/>
+     
       </div>
     );
   }
