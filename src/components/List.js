@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import ListItem from "./ListItem";
 
 class List extends Component {
 
@@ -7,7 +7,7 @@ class List extends Component {
   render() {
    
     return this.props.list.map((list) =>(
-      <h3>{list.place}</h3>
+      <ListItem/>
     ));
   }
 }
