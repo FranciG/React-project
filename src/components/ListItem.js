@@ -7,6 +7,7 @@ getStyle = () => {
         
         textDecoration: this.props.list.reserved ?
         "line-through": "none"
+        
     }
 /* long way to do it
     if(this.props.list.reserved) {
@@ -26,9 +27,8 @@ return {
         return (
             <div style={this.getStyle()}>
                <p>
-                   <input type="checkbox" onChange={this.props.markReserved.bind
-                   (this, id)}                  
-                   />
+               
+                   <button onClick={this.props.markReserved.bind(this, id)} style={btnStyle} >Reserve</button>
                    {place}
                    
                    </p> 
@@ -36,5 +36,15 @@ return {
         )
     }
 }
+
+const btnStyle = {
+    background: '#222222',
+    color: '#fff',
+    border: 'none',
+    padding: '5px 9px',
+    
+    cursor: 'pointer',
+    float: 'right'
+  }
 
 export default ListItem
