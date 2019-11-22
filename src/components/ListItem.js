@@ -19,13 +19,19 @@ return {
         }
     } */
 }
+//The function takes an event parameter
 
     render() {
+        const {id, place} =this.props.list;
         return (
             <div style={this.getStyle()}>
                <p>
-                   <input type="checkbox"/>
-                   {this.props.list.place}
+                   <input type="checkbox" onChange={this.props.markReserved.bind
+                   (this, id)}
+                   
+                   />
+                   {place}
+                   
                    </p> 
             </div>
         )

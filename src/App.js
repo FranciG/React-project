@@ -15,14 +15,20 @@ class App extends Component {
         reserved: true
       }
     ]
-  };
+  }
+
+  markReserved = (id) => {
+    console.log(id)
+
+  }
+
 
   render() {
-    
+
     return (
       <div className={"App"}>
      
-        <List list={this.state.list}/>
+        <List list={this.state.list} markReserved = {this.markReserved}/>
      
       </div>
     );
