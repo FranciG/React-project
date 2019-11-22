@@ -16,9 +16,14 @@ class App extends Component {
       }
     ]
   }
-
+//Change the restaurant status to reserved/free
   markReserved = (id) => {
-    console.log(id)
+    this.setState({list : this.state.list.map(list =>{
+      if(list.id === id) {
+        list.reserved = !list.reserved
+      }
+      return list;
+    })});
 
   }
 

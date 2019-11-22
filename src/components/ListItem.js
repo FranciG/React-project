@@ -27,8 +27,7 @@ return {
             <div style={this.getStyle()}>
                <p>
                    <input type="checkbox" onChange={this.props.markReserved.bind
-                   (this, id)}
-                   
+                   (this, id)}                  
                    />
                    {place}
                    
