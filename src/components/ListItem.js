@@ -6,7 +6,8 @@ getStyle = () => {
         padding:"15px",
         
         textDecoration: this.props.list.reserved ?
-        "line-through": "none"
+        "line-through": "none",
+      
         
     }
 /* long way to do it
