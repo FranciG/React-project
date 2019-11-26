@@ -12,12 +12,14 @@ app.use(bodyParser.json());
 const db = require ('./config/keys').mongoURI;
 
 // Connect to Mongo
-mongoose
-  .connect(db) 
+
+mongoose.connect(db, {useNewUrlParser: true} )
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
-  app.use ('api/items', items);
+
+  //Routes
+  app.use('/api/items', items);
 
   const port = process.env.PORT || 5000;
 
