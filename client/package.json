@@ -1,26 +1,21 @@
 {
-  "name": "awa",
+  "name": "client",
   "version": "0.1.0",
-  "main": "server.js",
   "private": true,
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.7.12",
+    "bootstrap": "^4.4.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-transition-group": "^4.3.0",
+    "reactstrap": "^8.1.1",
+    "uuid": "^3.3.3"
   },
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client-install": "npm install --prefix client"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,7 +32,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "nodemon": "^2.0.1"
-  }
+  "proxy": "http://localhost:5000"
 }
