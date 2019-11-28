@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import AppNavbar from  "./components/AppNavbar";
 class App extends Component {
 
 
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className={"App"}>
      
-      <h1>Hola</h1>
+      <AppNavbar/>
      
       </div>
     );
