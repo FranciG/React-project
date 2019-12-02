@@ -12,7 +12,7 @@ const initialState = {
         {id: uuid(), name: "El paellas"},
         {id: uuid(), name: "Paellero regulero"},
         {id: uuid(), name: "El paellitas"},
-        {id: uuid(), name: "El paellitas de marisco"}
+        {id: uuid(), name: "El paellitas paella mixta"}
     ]
 }
 export default function (state = initialState, action) {

@@ -4,18 +4,26 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
+import PropTypes from 'prop-types';
+
 
 class ItemList extends Component {
-state = {
+
+    componentDidMount(){
+        this.props.getItems();
+    }
+/* It comes from the component itemReducer.js . No needed to have the state
+ state = {
     items: [
         {id: uuid(), name: "El paellas"},
         {id: uuid(), name: "Paellero regulero"},
         {id: uuid(), name: "El paellitas"},
         {id: uuid(), name: "El paellitas de marisco"}
     ]
-        }
+        } */
 render () {
-    const { items} = this.state;
+    //The state comes from redux, accessed from this.props.item. We pull items from it
+    const { items} = this.props.item;
     return(
 <Container>
     <Button
@@ -60,8 +68,13 @@ render () {
 
 
 }
+ItemList.propTypes = {
+    getItems: PropTypes.func.isRequired,
+    item: PropTypes.object.isRequired
+}
+
 const mapStateToProps = state => ({
     item: state.item
     
   });
-export default connect(mapStateToProps) (ItemList);
+export default connect(mapStateToProps, {getItems}) (ItemList);
