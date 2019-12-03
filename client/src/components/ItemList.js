@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import uuid from 'uuid';
+// import uuid from 'uuid';
 import { connect } from 'react-redux';
-import { getItems } from '../actions/itemActions';
+import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 
@@ -12,32 +12,15 @@ class ItemList extends Component {
     componentDidMount(){
         this.props.getItems();
     }
-/* It comes from the component itemReducer.js . No needed to have the state
- state = {
-    items: [
-        {id: uuid(), name: "El paellas"},
-        {id: uuid(), name: "Paellero regulero"},
-        {id: uuid(), name: "El paellitas"},
-        {id: uuid(), name: "El paellitas de marisco"}
-    ]
-        } */
+onDeleteClick = (id) => {
+this.props.deleteItem(id);
+}
 render () {
     //The state comes from redux, accessed from this.props.item. We pull items from it
     const { items} = this.props.item;
     return(
 <Container>
-    <Button
-        color="dark"
-        onClick={()=> {
-            const name = prompt("Enter Restaurant");
-            if(name) {
-                this.setState(state => ({
-                    items: [...state.items, {id: uuid(), name}]
-                }));
-            }
-        }}>
-   Add item
-    </Button>
+   
     <ListGroup>
         <TransitionGroup className="Item-List">
             {items.map(({id, name})=> (
@@ -47,12 +30,7 @@ render () {
                         className="remove-btn"
                         color="danger"
                         size="sm"
-                        onClick= {() => {
-                            this.setState(state =>({
-                                //The element clicked wont be returned in the array(filtered)
-                                items: state.items.filter(item => item.id !== id)
-                            }));
-                        }}
+                        onClick= {this.onDeleteClick.bind(this, id)}
                         >
                             &times;
                         </Button>
@@ -77,4 +55,4 @@ const mapStateToProps = state => ({
     item: state.item
     
   });
-export default connect(mapStateToProps, {getItems}) (ItemList);
+export default connect(mapStateToProps, {getItems, deleteItem}) (ItemList);
