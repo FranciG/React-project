@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, /* Fragment */ } from 'react';
 import {
   Collapse,
   Navbar,
@@ -6,10 +6,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  // NavLink,
   Container
 } from 'reactstrap';
-
+import RegisterModal from './auth/RegisterModal';
+import Logout from './auth/Logout';
 class AppNavbar extends Component {
 
     state = {
@@ -29,15 +30,16 @@ class AppNavbar extends Component {
                 <Navbar color="dark" dark expand="sm" className="mb-5">
 
                 <Container>
-            <NavbarBrand href='/'>Restaurants </NavbarBrand>
+            <NavbarBrand href='/'>Restaurantes de paellitas </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='ml-auto' navbar>
                 <NavItem>
-                    <NavLink href="google.es">
-                        Gulugulu
-                    </NavLink>
+                   <RegisterModal/>
                 </NavItem>
+                <NavItem>
+          <Logout />
+        </NavItem>
               </Nav>
             </Collapse>
           </Container>
