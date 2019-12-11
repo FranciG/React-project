@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
+  
+  
 
 class ItemList extends Component {
     static propTypes = {
@@ -49,7 +51,7 @@ render () {
                         style={{ marginRight: '1rem' }}
                         >
                         
-                           Reserve
+                           Edit
                         </Button>
                         }
                        
