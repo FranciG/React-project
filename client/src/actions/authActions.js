@@ -5,8 +5,8 @@ import {
   USER_LOADED,
   USER_LOADING,
   AUTH_ERROR,
- /*  LOGIN_SUCCESS,
-  LOGIN_FAIL,*/
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
   LOGOUT_SUCCESS, 
   REGISTER_SUCCESS,
   REGISTER_FAIL
@@ -72,7 +72,7 @@ export const logout = () => {
     type: LOGOUT_SUCCESS
   };
 };
-/*
+
 // Login User
 export const login = ({ email, password }) => dispatch => {
   // Headers
@@ -104,7 +104,7 @@ export const login = ({ email, password }) => dispatch => {
 };
 
 
- */
+ 
 // Setup config/headers and token
 export const tokenConfig = getState => {
   // Get token from localstorage

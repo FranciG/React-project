@@ -8,6 +8,11 @@ import PropTypes from 'prop-types';
 
 
 class ItemList extends Component {
+    static propTypes = {
+        getItems: PropTypes.func.isRequired,
+        item: PropTypes.object.isRequired,
+        isAuthenticated: PropTypes.bool
+    };
 
     componentDidMount(){
         this.props.getItems();
@@ -15,6 +20,8 @@ class ItemList extends Component {
 onDeleteClick = (id) => {
 this.props.deleteItem(id);
 }
+
+
 render () {
     //The state comes from redux, accessed from this.props.item. We pull items from it
     const { items} = this.props.item;
@@ -26,7 +33,8 @@ render () {
             {items.map(({_id, name})=> (
                 <CSSTransition key={_id} timeout={500} classNames="fade">
                     <ListGroupItem>
-                        <Button
+                        {this.props.isAuthenticated ? 
+                            <Button
                         className="remove-btn"
                         color="danger"
                         size="sm"
@@ -34,6 +42,17 @@ render () {
                         >
                             &times;
                         </Button>
+                        : 
+                        <Button
+                        
+                        color="secondary" size="sm" disabled 
+                        style={{ marginRight: '1rem' }}
+                        >
+                        
+                           Reserve
+                        </Button>
+                        }
+                       
                         {name}
                     </ListGroupItem>
                 </CSSTransition>
@@ -46,13 +65,11 @@ render () {
 
 
 }
-ItemList.propTypes = {
-    getItems: PropTypes.func.isRequired,
-    item: PropTypes.object.isRequired
-}
+
 
 const mapStateToProps = state => ({
-    item: state.item
+    item: state.item,
+    isAuthenticated: state.auth.isAuthenticated
     
   });
 export default connect(mapStateToProps, {getItems, deleteItem}) (ItemList);
