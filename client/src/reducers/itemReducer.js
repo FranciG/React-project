@@ -1,5 +1,5 @@
 //State & actions comes from here
-
+//Importing types from /actions/types
 import {
     GET_ITEMS,
     ADD_ITEM,
@@ -10,8 +10,10 @@ import {
 
 const initialState = {
     items: [],
+    //When starts to get the data, loading is set to true, when it has de data, goes back to false
     loading: false
 }
+//When the object action comes in, the type of action is tested on the switch with action.type
 export default function (state = initialState, action) {
     switch (action.type) {
       case GET_ITEMS:

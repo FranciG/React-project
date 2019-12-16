@@ -3,6 +3,7 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppNavbar from  "./components/AppNavbar";
 import ItemList  from "./components/ItemList";
+//react redux binds react and redux
 import { Provider } from 'react-redux';
 import store from './store';
 import ItemModal from './components/ItemModal';

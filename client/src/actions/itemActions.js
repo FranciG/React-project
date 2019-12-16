@@ -5,6 +5,7 @@ import {
     ITEMS_LOADING
     
   } from './types';
+  //Http clien axios is used instead of fetch api
   import axios from "axios";
   import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';

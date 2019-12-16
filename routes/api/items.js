@@ -5,12 +5,14 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 
 //auth is added to protected routes
-// Item Model
+// The model is required
 const Item = require('../../models/Item');
 
 // @route   GET api/items
 // @desc    Get All Items
 // @access  Public
+
+//The model Item is taken, then, the find method from mongoose, that returns a promise
 router.get('/', (req, res) => {
     Item.find()
       .sort({ date: -1 })
