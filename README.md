@@ -1,7 +1,7 @@
-##Project deployed at:
+## Project deployed at:
 https://stark-peak-92286.herokuapp.com/
 
-##Project description:
+## Project description:
 
 To create this app I used react, nodejs, express, mongodb, redux.
 
