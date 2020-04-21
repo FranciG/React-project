@@ -1,3 +1,16 @@
+##Project deployed at:
+https://stark-peak-92286.herokuapp.com/
+
+##Project description:
+
+To create this app I used react, nodejs, express, mongodb, redux.
+
+The app consists on a list of items that are fetched from the database to be displayed.
+If the user is not logged in , he can only watch the item, but he can't add new items.
+After registering, the user can log in and add/delete items.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
